@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                 ('unseen', models.BooleanField(default=True, db_index=True, verbose_name='unseen')),
                 ('archived', models.BooleanField(default=False, verbose_name='archived')),
                 ('on_site', models.BooleanField(default=False, verbose_name='on site')),
-                ('notice_type', models.ForeignKey(verbose_name='notice type', to='pinax_notifications.NoticeType'), on_delete=models.PROTECT),
+                ('notice_type', models.ForeignKey(verbose_name='notice type', to='pinax_notifications.NoticeType', on_delete=models.PROTECT)),
                 ('recipient', models.ForeignKey(related_name='received_notices', verbose_name='recipient', to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)),
                 ('sender', models.ForeignKey(related_name='sent_notices', verbose_name='sender', to=settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)),
             ],
